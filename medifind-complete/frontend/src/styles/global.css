@@ -1,0 +1,99 @@
+@import './variables.css';
+
+/* CSS Reset & Defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-ink-900);
+  background-color: var(--color-paper-bg);
+  /* Tactile fine paper weave texture */
+  background-image: 
+    radial-gradient(var(--color-border) 0.5px, transparent 0.5px),
+    radial-gradient(var(--color-border) 0.5px, var(--color-paper-bg) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-ink-900);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+/* Tabular Numbers everywhere */
+.num, .tabular, code, pre, time, [data-tabular="true"] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Accessible Focus States */
+:focus-visible {
+  outline: 2px solid var(--color-pine-800);
+  outline-offset: 2px;
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+/* Typography Helpers */
+.serif { font-family: var(--font-serif); }
+.sans { font-family: var(--font-sans); }
+
+.text-pine { color: var(--color-pine-800); }
+.text-saffron { color: var(--color-saffron-600); }
+.text-muted { color: var(--color-ink-500); }
+.text-ink { color: var(--color-ink-900); }
+
+/* Common Utility Cards */
+.paper-card {
+  background: var(--color-paper-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+/* Leaflet Container overrides */
+.leaflet-container {
+  font-family: var(--font-sans) !important;
+  border-radius: var(--radius-md);
+  z-index: 10;
+}
